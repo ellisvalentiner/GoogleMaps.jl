@@ -6,5 +6,6 @@ using JSON
 using Base.Dates
 
 include("geocoding.jl")
+export geocode
 
 end # module
