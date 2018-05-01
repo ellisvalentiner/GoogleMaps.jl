@@ -1,5 +1,10 @@
 module GoogleMaps
 
-# package code goes here
+using ArgCheck
+using HTTP
+using JSON
+using Base.Dates
+
+include("geocoding.jl")
 
 end # module
