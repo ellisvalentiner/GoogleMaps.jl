@@ -1,7 +1,7 @@
 
 type Point
-    lat::Float
-    lng::Float
+    lat::Float64
+    lng::Float64
 end
 String(x) = "$(x.lat),$(x.lng)"
 
