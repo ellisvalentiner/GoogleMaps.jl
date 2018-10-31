@@ -20,5 +20,5 @@ if haskey(ENV, "GOOGLE_MAPS_KEY")
     end
 
 else
-    info("Google Maps API key was not found in environment variables, skipping tests...")
+    @info "Google Maps API key was not found in environment variables, skipping tests..."
 end
