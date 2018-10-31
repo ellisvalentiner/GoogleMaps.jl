@@ -3,9 +3,12 @@ module GoogleMaps
 using ArgCheck
 using HTTP
 using JSON
-using Base.Dates
+using Dates
 
 include("geocoding.jl")
 export geocode
 
-end # module
+include("timezone.jl")
+export timezone
+
+end

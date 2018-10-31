@@ -12,14 +12,14 @@ Unofficial Julia wrapper for the Google Maps API.
 
 This package is an unofficial wrapper for the Google Maps API.
 
-The Google Maps API requires an API key. See the [Google Maps API Documentation](https://developers.google.com/maps/web-services/) to request one.
+The Google Maps API requires an API key. See the [Google Maps API Documentation](https://developers.google.com/maps/documentation/) to request one.
 
 ## Installation
 
 ```julia
 # GoogleMaps.jl is not currently registered as an official package
 # Please install the development version from GitHub:
-Pkg.clone("git://github.com/ellisvalentiner/GoogleMaps.jl.git")
+]add git://github.com/ellisvalentiner/GoogleMaps.jl.git
 ```
 
 GoogleMaps.jl expects your API key to be stored as an environment variable named `GOOGLE_MAPS_KEY`.
@@ -30,4 +30,5 @@ GoogleMaps.jl expects your API key to be stored as an environment variable named
 using GoogleMaps
 
 geocode("1600+Amphitheatre+Parkway,+Mountain+View,+CA")
+timezone((37.4226128, -122.0854158))
 ```

@@ -1,11 +1,18 @@
 using GoogleMaps
-@static if VERSION < v"0.7.0-DEV.2005"
-    using Base.Test
-else
-    using Test
+using Dates
+using Test
+
+@testset "Geocode" begin
+    response = geocode("1600+Amphitheatre+Parkway,+Mountain+View,+CA")
+    @test response["status"] == "OK"
+    @test response["results"][1]["formatted_address"] == "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA"
+    @test response["results"][1]["geometry"]["location"] == Dict{String,Any}("lat" => 37.4226128, "lng" => -122.0854158)
 end
 
-response = geocode("1600+Amphitheatre+Parkway,+Mountain+View,+CA")
-@test response["status"] == "OK"
-@test response["results"][1]["formatted_address"] == "Google Building 41, 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA"
-@test response["results"][1]["geometry"]["location"] == Dict{String,Any}("lat" => 37.4224082, "lng" => -122.0856086)
+@testset "Timezone" begin
+    location = (37.4226128, -122.0854158)
+    timestamp = DateTime("2018-10-30T21:50:31.673")
+    response = timezone(location, timestamp)
+    @test response["status"] == "OK"
+    @test response["timeZoneId"] == "America/Los_Angeles"
+end
