@@ -1,0 +1,19 @@
+site_name:        GoogleMaps.jl
+repo_url:         https://github.com/ellisvalentiner/GoogleMaps.jl
+site_description: A Julia client for the Google Maps/Places API.
+site_author:      Ellis Valentiner
+
+theme: readthedocs
+
+extra_css:
+  - assets/Documenter.css
+
+markdown_extensions:
+  - extra
+  - tables
+  - fenced_code
+
+docs_dir: 'build'
+
+pages:
+  - Home: index.md
